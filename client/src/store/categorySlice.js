@@ -6,6 +6,7 @@ const initialState = {
     categories: [],
     sliderImgs: [],
     banners: [],
+    articles: [],
     status: 'idle', // idle | loading | succeeded | failed
     error: null,
 };
@@ -34,6 +35,12 @@ export const fetchHomeBanners = createAsyncThunk('banner/fetch', async () => {
     return response.data;
 });
 
+// Async thunk for fetching home sliders
+export const fetchArticles = createAsyncThunk('article/fetch', async () => {
+    const response = await axiosInstance.get('/api/articles'); // Adjust the URL accordingly
+    return response.data;
+});
+
 // Create a slice
 const categorySlice = createSlice({
     name: 'categories',
@@ -55,6 +62,9 @@ const categorySlice = createSlice({
             .addCase(fetchHomeBanners.fulfilled, (state, action) => {
                 state.banners = action.payload;
             })
+            .addCase(fetchArticles.fulfilled, (state, action) => {
+                state.articles = action.payload;
+            })  
             ;
     },
 });

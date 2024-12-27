@@ -16,6 +16,7 @@ const Header = () => {
             <Link to="/cars" className="nav-link">Cars</Link>
             <Link to="/homesliders" className="nav-link">HomeSlider</Link>
             <Link to="/homebanners" className="nav-link">HomeBanner</Link>
+            <Link to="/articles" className="nav-link">Articles</Link>
             <button className={styles.white_btn} onClick={handleLogout}>
                 Logout
             </button>

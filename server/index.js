@@ -11,6 +11,7 @@ const detailRoutes = require("./routes/detail");
 const homeSliderRoutes = require("./routes/homeslider");
 const homeBannerRoutes = require("./routes/homebanner");
 const homeAdditionRoutes = require("./routes/homeaddition");
+const articleRoutes = require("./routes/article");
 
 // database connection
 connection();
@@ -28,6 +29,7 @@ app.use("/api/detail", detailRoutes);
 app.use("/api/homesliders", homeSliderRoutes);
 app.use("/api/homebanners", homeBannerRoutes);
 app.use("/api/homeadditions", homeAdditionRoutes);
+app.use("/api/articles", articleRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
